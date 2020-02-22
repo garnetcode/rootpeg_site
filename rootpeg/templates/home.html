@@ -1,0 +1,747 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}home{%endblock %}
+
+{% block body %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"><a href="#" class="back-to-top" style="display: none;"><i class="fa fa-angle-up"></i></a>
+ <!-- Intro Section -->
+    <section id="intro" class="section-wrap intro-section text-left">
+        <!--Slider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-8 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                    <h3>For more value and exceptional service</h3>
+                    <h1 class="section_title">
+                        <a href="#contact" ><strong>Call Us Today</strong></a>
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-4 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="contact-cont">
+
+                        <div class="title"><strong>Request</strong> a Free Quotation Estimate</div>
+                        <ul class="messages">
+                                {% for msg in messages %}
+                                    <li>
+                                        <div class="alert alert-{{msg.level_tag}}" role="alert">
+                                            {{msg.message}}
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                        </ul>
+                        <form action="{% url 'quotation' %}",  method="post" name="sentMessage" id="contactForm" novalidate="">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="inp-icon user">
+                                                {{modalform.name}}
+                                            </div>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="inp-icon user">
+                                                {{modalform.number}}
+                                            </div>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="inp-icon mail">
+                                                {{modalform.email}}
+                                            </div>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <div class="inp-icon paper-plane">
+                                                {{modalform.description}}
+                                            </div>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="text-left">
+                                            <input type="submit" class="button small alt" value="Request"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End -->
+    <section id="services" class="section-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center wow flipInX" style="visibility: visible; animation-name: flipInX;">
+                    <h2 class="section_title"><strong>Rootpeg</strong> Services</h2>
+                    <p class="pb50">What we do</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 mt45 block_bottom-xs wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                    <div class="box_icon-item text-center">
+                        <div class="img-cont">
+                            <img src="{% static 'resources/images/icons/ico-01.png' %}" alt="" width="60" height="60">
+                        </div>
+                        <h6 class="title">Wall Partitioning and Paneling</h6>
+                        <p> <!--phrase here --> </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 mt45 block_bottom-xs wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="box_icon-item text-center">
+                        <div class="img-cont">
+                            <img src="{% static 'resources/images/icons/icon-02.png' %}" alt="" width="60" height="60">
+                        </div>
+                        <h6 class="title">Counters, Ceilings & Built-in Wardrobes </h6>
+                        <p><!--phrase here --></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 mt45 block_bottom-xs wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="box_icon-item text-center">
+                        <div class="img-cont">
+                            <img src="{% static 'resources/images/icons/icon-03.png' %}" alt="" width="60" height="60">
+                        </div>
+                        <h6 class="title">Fitted Kitchens and Staircases</h6>
+                        <p><!--phrase here --></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt10 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="col-md-4 col-sm-4 mt35 block_bottom-xs">
+                    <div class="box_icon-item text-center">
+                        <div class="img-cont">
+                            <img src="{% static 'resources/images/icons/icon-04.png' %}" alt="" width="60" height="60">
+                        </div>
+                        <h6 class="title">Aluminium Works</h6>
+                        <p><!--phrase here --></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 mt35 block_bottom-xs">
+                    <div class="box_icon-item text-center">
+                        <div class="img-cont">
+                            <img src="{% static 'resources/images/icons/icon-05.png' %}" alt="" width="60" height="60">
+                        </div>
+                        <h6 class="title">Customized Joinery </h6>
+                        <p><!--phrase here --></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 mt35 block_bottom-xs">
+                    <div class="box_icon-item text-center">
+                        <div class="img-cont">
+                            <img src="{% static 'resources/images/icons/icon-06.png' %}" alt="" width="60" height="60">
+                        </div>
+                        <h6 class="title">Roofing & Flooring</h6>
+                        <p><!--phrase here --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Video -->
+    <section class="section-wrap video-block">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class="video_content">
+                        <div class="row text-center">
+                            <div class="col-md-6 col-md-offset-3 wow flipInX" style="visibility: visible; animation-name: flipInX;">
+                                <h2 class="section_title"><strong>The Work</strong> of Our Company</h2>
+                                <p>Watch how the professionals do it.</p>
+                            </div>
+                        </div>
+                        <a class="video swipebox-video" href="https://www.youtube.com/watch?v=kTYJKko5HBg" width="1170" height="780" target="_self">
+                            <div class="video-popup-animation">
+                                <div style=" -webkit-animation-duration: 2500ms; -moz-animation-duration: 2500ms;-o-animation-duration: 2500ms; animation-duration: 2500ms; color: #ffffff; -webkit-animation-delay: 0ms;-moz-animation-delay: 0ms;-o-animation-delay: 0ms;animation-delay: 0ms;">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-block_height"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section -->
+
+    <section id="choose_us" class="section-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                    <h2 class="section_title mb35"><strong>Why</strong> Choose Us</h2>
+                    <p>We are  one of the leading shop fitters company with modern equipment providing high quality services to
+                        all our customers and money back guarantee if you are not satisfied with our services.</p>
+                    <a class="mt20 button" href="#">Contact Us</a>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 mt30 block_bottom-xs wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-11.png' %}" alt="" width="66" height="49">
+                                </div>
+                                <h6 class="title">High Quality</h6>
+                                <p>We never compromise on quality. </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 mt30 block_bottom-xs wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-12.png' %}" alt="" width="66" height="49">
+                                </div>
+                                <h6 class="title">Eco-Friendly</h6>
+                                <p>For every tree we cut, we plant two</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 mt30 block_bottom-xs wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-13.png' %}" alt="" width="66" height="49">
+                                </div>
+                                <h6 class="title">Low Cost</h6>
+                                <p>Providing the best services for affordable prices.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 mt30 block_bottom-xs wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-14.png' %}" alt="" width="66" height="49">
+                                </div>
+                                <h6 class="title">Staff Qualification</h6>
+                                <p>We have the best stuff and suppliers in the industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-wrap how_we_work">
+        <div class="container">
+            <div class="row text-center ">
+                <div class="col-md-12">
+                    <h2 class="section_title wow flipInX" style="visibility: visible; animation-name: flipInX;"><strong>How</strong> We Work</h2>
+                    <p>it's as simple as </p>
+                </div>
+                <div class="col-md-12">
+                    <div class="row wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="col-md-3 col-sm-3 mt50 block_bottom-xs">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-07.png' %}" alt="">
+                                </div>
+                                <h6 class="title">Fill in the online booking form or simply call us & we take care of the paperwork</h6>
+                                <p><!--phrase here -->.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 mt50 block_bottom-xs">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-08.png' %}" alt="">
+                                </div>
+                                <h6 class="title">We come to you</h6>
+                                <p><!--phrase here -->.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 mt50 block_bottom-xs">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-09.png' %}" alt="">
+                                </div>
+                                <h6 class="title">We get the job done</h6>
+                                <p><!--phrase here --></p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 mt50 block_bottom-xs">
+                            <div class="box_icon-item text-center">
+                                <div class="img-cont">
+                                    <img src="{% static 'resources/images/icons/icon-10.png' %}" alt="">
+                                </div>
+                                <h6 class="title">You are good to go</h6>
+                                <p><!--phrase here --></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-wrap call_to_action">
+        <div class="container">
+            <div class="row text-center ">
+                <div class="col-md-12 color-white">
+                    <h2 class="section_title wow flipInX" style="visibility: visible; animation-name: flipInX;">Get Discount Now</h2>
+                    <p>Refer another customer and get a 5% today</p>
+                    <a class="button wow bounceIn" href="#intro" style="visibility: visible; animation-name: bounceIn;">Get Discount now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="price" class="section-wrap module_price_table">
+        <div class="container">
+            <div class="row text-center ">
+                <div class="col-md-12 wow flipInX" style="visibility: visible; animation-name: flipInX;">
+                    <h2 class="section_title"><strong>Our</strong> Pricing</h2>
+                </div>
+                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 mb85 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                    <div class="price_table_wrapper text-center">
+                        <div class="price_item block_bottom-xs">
+                            <div class="price_item_wrapper">
+                                <div class="price_item_wrap">
+                                    <div class="price_item_head">
+                                        <img src="{% static 'resources/images/icons/icon-18.png' %}" alt="" width="84" height="84">
+                                        <div class="price_item_title">
+                                            <h5>Wall partitioning</h5>
+                                        </div>
+                                        <div class="price_item_cost">
+                                           <span class="price_item_prefix">$USD</span>
+                                           <span class="price_value">300</span>
+                                        </div>
+                                    </div>
+                                    <div class="price_item_body">
+                                        <div class="price_item_text">
+                                            <h6>On site fitting </h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>No transport costs.</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>10% discount.</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>Available 24/7.</h6>
+                                        </div>
+                                        <div class="price_item_btn">
+                                            <a class="button alt block-1" href="javascript:void(0);">VIEW MORE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 mb50 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="price_table_wrapper most_popular text-center">
+                        <div class="price_item block_bottom-xs">
+                            <div class="price_item_wrapper">
+                                <div class="price_item_wrap">
+                                    <div class="price_item_head">
+                                        <img src="{% static 'resources/images/icons/icon-19.png' %}" alt="" width="84" height="84">
+                                        <div class="price_item_title">
+                                            <h5>Kitchen fitting</h5>
+                                        </div>
+                                        <div class="price_item_cost">
+                                           <span class="price_item_prefix">$USD</span>
+                                           <span class="price_value"></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_item_body">
+                                        <div class="price_item_text">
+                                            <h6>On site fitting</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>30 %transport costs.</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>discount.</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>Available 24/7.</h6>
+                                        </div>
+                                        <div class="price_item_btn">
+                                            <a class="button block-3" href="#intro">Get Started</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 mb85 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="price_table_wrapper text-center">
+                        <div class="price_item block_bottom-xs">
+                            <div class="price_item_wrapper">
+                                <div class="price_item_wrap">
+                                    <div class="price_item_head">
+                                        <img src="{% static 'resources/images/icons/icon-20.png' %}" alt="" width="84" height="84">
+                                        <div class="price_item_title">
+                                            <h5>Counters</h5>
+                                        </div>
+                                        <div class="price_item_cost">
+                                           <span class="price_item_prefix">$USD</span>
+                                           <span class="price_value">250</span>
+                                        </div>
+                                    </div>
+                                    <div class="price_item_body">
+                                        <div class="price_item_text">
+                                            <h6>On site fitting</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>50 %transport costs.</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>No discount</h6>
+                                        </div>
+                                        <div class="price_item_text">
+                                            <h6>Available 24/7.</h6>
+                                        </div>
+                                        <div class="price_item_btn">
+                                            <a class="button alt block-1" href="javascript:void(0);">View More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how_it_work" id="how_it_work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="section_title wow flipInX" style="visibility: visible; animation-name: flipInX;"><strong>Rootpeg </strong> Terms and Conditions</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 wow fadeInLeft" style="visibility: hidden; animation-name: none;">
+                    <div class="how_it_work_block-01">
+                        <h6>Conditions</h6>
+                        <ul>
+                            <li><p>Condition #1</p></li>
+                            <li><p>Condition #2</p></li>
+                            <li><p>Condition #3</p></li>
+                            <li><p>Condition #4</p></li>
+                        </ul>
+                        <a class="button" href="#">View More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeInRight" style="visibility: hidden; animation-name: none;">
+                    <div class="how_it_work_block-02">
+                        <h6>Payment</h6>
+                        <ul>
+                            <li><p>Clause #1.</p></li>
+                            <li><p>Clause #2.</p></li>
+                            <li><p>Clause #3..</p> </li>
+                            <li><p>Clause #4.</p></li>
+                        </ul>
+                        <a class="button" href="#">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-wrap call_to_action2">
+        <div class="container">
+            <div class="row text-center ">
+                <div class="col-md-12 color-white">
+                    <p class="wow flipInX" style="visibility: hidden; animation-name: none;">Call us for more value and exceptional service</p>
+                    <h2 class="section_title">Call Us: +263 772 885 007 <br> or +263 716 063 004</h2>
+                    <a class="button wow bounceIn" href="#" style="visibility: hidden; animation-name: none;">book now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section -->
+    <section class="section-wrap testimonials">
+        <div class="col-sm-12 col-md-5">
+            <div class="left-side max_width-470 wow flipInX" style="visibility: hidden; animation-name: none;">
+                <h3 class="section_title text-left"><strong>We Work</strong><br> Responsibly For You</h3>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-7 wow fadeInRight" style="visibility: hidden; animation-name: none;">
+            <div id="owl-journal" class="owl-carousel testimonials-slider mb75 owl-loaded owl-drag">
+                <!-- item -->
+
+
+
+
+            <div class="owl-stage-outer"><div class="owl-stage" style="transition: all 0s ease 0s; width: 3872px; transform: translate3d(-726px, 0px, 0px);"><div class="owl-item cloned" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“ Comment here ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">customer
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div><div class="owl-item cloned" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“ Efficient and professional execution ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">Kudzie Lorraine
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div><div class="owl-item active center" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“Comment here ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">Charles Dickens
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div><div class="owl-item active" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“ Comment here ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">Sasha Gray
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div><div class="owl-item" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“Comment here ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">Andrew Dream
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div><div class="owl-item" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“ Love you guys. ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">Sandra Miller
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div><div class="owl-item cloned" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“ Amazing work. ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">Andrew Dream
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div><div class="owl-item cloned" style="width: 444px; margin-right: 40px;"><div class="slide-item">
+                    <div class="user-information">
+                        <div class="comment">
+                            <p>“Number 1 ”</p>
+                        </div>
+                        <div class="img-wrap">
+                            <img src="{% static 'resources/images/customers/fb.png' %}" alt="">
+                        </div>
+                        <div class="testimonials_title">Sandra Miller
+                            <div class="testimonials_author_position">Customer</div>
+                        </div>
+                    </div>
+                </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+        </div>
+    </section>
+    <!-- Section -->
+    <section class="section-wrap contact" id="contact">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                        <h4 class="section_title wow flipInX" style="visibility: hidden; animation-name: none;"><strong>Ask</strong> a Question</h4>
+                        <div class="contact-cont">
+                            <form action="{% url 'query' %}",  method="post"  name="sentMessage" id="contactForm" novalidate="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <div class="inp-icon user">
+                                                    {{queryform.name}}
+                                                </div>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <div class="inp-icon user">
+                                                    {{queryform.email}}
+                                                </div>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <div class="inp-icon paper-plane">
+                                                    {{queryform.question}}
+                                                </div>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                            <div class="text-left wow bounceIn" style="visibility: hidden; animation-name: none;">
+                                                <input type="submit" class="button small alt" value="Submit"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Section -->
+    <section id="infobox" class="section-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-xs-12 custom_gradient color-white pb30 wow fadeInRight" style="visibility: hidden; animation-name: none;">
+                    <div class="box_icon-item_left">
+                        <figure class="box_icon-item_left__icon">
+                            <img class="box-item_img_normal" src="{% static 'resources/images/icons/icon-15.png' %}" alt="" height="70">
+                        </figure>
+                        <div class="icon-item__wrapp">
+                            <h5 class="box_icon-item_left__title"><strong>Address:</strong><br>Stand No 3, ZAS Enterprise Mall, Harare, Zimbabwe</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-xs-12 custom_gradient color-white pb30 wow fadeInDown" style="visibility: hidden; animation-name: none;">
+                    <div class="box_icon-item_left">
+                        <figure class="box_icon-item_left__icon">
+                            <img class="box-item_img_normal" src="{% static 'resources/images/icons/icon-16.png' %}" alt="" height="70">
+                        </figure>
+                        <div class="icon-item__wrapp">
+                            <h5 class="box_icon-item_left__title"><strong>Phones:</strong><br>+263 772 885 007 / +263716 063 004</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-xs-12 custom_gradient color-white pb30 wow fadeInLeft" style="visibility: hidden; animation-name: none;">
+                    <div class="box_icon-item_left">
+                        <figure class="box_icon-item_left__icon">
+                            <img class="box-item_img_normal" src="{% static 'resources/images/icons/icon-17.png' %}" alt="" height="70">
+                        </figure>
+                        <div class="icon-item__wrapp">
+                            <h5 class="box_icon-item_left__title"><strong>Email:</strong><br>rootpegshopfitters@gmail.com</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-page">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="site-logo" href="#page-top">
+                            <img src="{% static 'resources/images/logos/footer-logo.png' %}" alt="site logo" width="140" height="33">
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+                        <div class="footer-menu text-right fright">
+                            <ul class="nav navbar-nav">
+                                <li class="menu-item">
+                                    <a href="#intro">Home</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#services">Services</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">About</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#price">Pricing</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#Rules">Rules</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#contact">Contacts</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9 col-lg-6 col-xs-12">
+                        <a class="copyright fleft" target="_blank" href="#">Terms and Conditions | Privacy Policy | © 2020 IMPULS. All rights reserved.</a>
+                    </div>
+                    <div class="col-sm-3 col-lg-6 col-xs-12">
+                        <div class="block_social-icons fright">
+                            <a href="#" class="google-plus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="#" class="facebook">
+                                <i class="fa fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static 'resources/jquery_003.js' %}"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="{% static 'resources/bootstrap.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'resources/owl.js' %}"></script>
+    <script src="{% static 'resources/wow.js' %}"></script>
+    <script src="{% static 'resources/jquery.js' %}"></script>
+    <script src="{% static 'resources/sticky.js' %}"></script>
+    <script src="{% static 'resources/jquery_002.js' %}"></script>
+    <script src="{% static 'resources/jquery_004.js' %}"></script>
+    <script src="{% static 'resources/sorting.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'resources/current.js' %}"></script>
+{%endblock %}
+
+
+</body>
+
+</html>
