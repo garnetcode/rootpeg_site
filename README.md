@@ -1,2 +1,2 @@
 # rootpeg_site
-websit
+website
